@@ -12,16 +12,164 @@ html {
 }
 
 /* resets font size to be 62.5% of the user preference - 
-   in most browser configurations this will be 10px */
+     in most browser configurations this will be 10px */
 :root {
   font-size: 62.5%
 }
 
 body {
   background-color: gray;
-/* Use a system font, if none are available use an available sans-sarif   font */
+  /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+}
+main{
   margin: 0;
-  display: grid;
+  text-align: center;
+  max-width: 350px;
+  font-size: 1.75rem;
+  background-color: beige;
+}
+img{
+  
+  border-radius: 50%;
+  border: 2px red solid; 
+}
+#contact{
+  display: flex;
+  align-items: flex-end;
+}
+p{
+  margin: 0;
+}
+h1{
+  margin: 10px 50px 10px 50px;
+  font-size: 3rem;
+}
+#status{
+  text-align: right;
+  color: lightgrey;
+  font-weight: 800;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+#contact{
+  display: flex;
+  margin-top: 20px;
+}
+#contact > p {
+  height: 60px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact > p:nth-child(1){
+  background-color: pink;
+}
+
+#contact > p:nth-child(2) {
+  background-color: red;
+}
+#brand{
+  display: none;
+}
+
+#offer{
+  margin: 10px 0 10px 0; 
+  font-size: 2rem;
+}
+#occupation{
+  background-color: rgb(172, 172, 137);
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+
+@media only screen and (min-width: 768px) {
+  body{
+    display: grid;
+  }
+  main {
+    display: grid;
+    text-align: left;
+    width: 700px;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+      "status name"
+      "img occupation"
+      "img brand" 
+      "contact offer";
+  }
+
+  #status {
+    text-align: left;
+    padding: 10px 0 0 20px;
+  }
+
+ 
+
+  #brand {
+    display: inline;
+  }
+
+  img {
+    grid-area: img;
+    
+  }
+
+  #contact {
+    grid-area: contact;
+  }
+
+
+  #brand > p {
+    border-left:red 3px solid;
+        font-size: 1.6rem;
+        padding-left: 5px;
+  }
+
+  #offer {
+    font-size: 1.4rem;
+    background-color:rgb(172, 172, 137) ;
+    margin: 0;
+    padding-top: 20px;
+    padding-left: 20px;
+  }
+
+  #name{
+    font-size: 1.75rem;
+    background-color:  rgb(172, 172, 137);
+  
+  }
+  #name >h1{
+    justify-self: stretch;
+  }
+  
+  #occupation{
+    background-color:  rgb(172, 172, 137);
+    padding-left: 20px;
+   
+    }
+  #brand {
+    background-color:  rgb(172, 172, 137);
+    padding-bottom: 10px;
+    margin: 0;
+    padding-left: 20px;
+    font-size: 30px;
+    }
+  #offer {
+  background-color:  rgb(172, 172, 137);
+  padding-bottom: 10px;
+  }
 }
